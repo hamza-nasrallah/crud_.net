@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Do >
+<a asp-action="create" class="btn btn-danger"> add new task</a>
+<table class="table">
+    <thead>
+        <tr>
+            
+           
+            <th scope="col">name</th>
+            <th scope="col">date</th>
+            
+            <th scope="col" >isdone</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var iteam in Model)
+        {
+        <tr>
+            
+                <td>@iteam.Name</td>
+                <td>@iteam.date</td>
+                
+                <td>@iteam.IsDone</td>
+                <td><a asp-action="Edit" asp-route-id="@iteam.id" class="btn btn-info"> edit</a>
+                    <a asp-action="Detalis" asp-route-id="@iteam.id" class="btn bg-light"> detalis</a>
+                    <a asp-action="Delete" asp-route-id="@iteam.id" class="btn btn-danger"> delete</a>
+                </td>
+                
+        </tr>
+        }
+    </tbody>
+</table>
